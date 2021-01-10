@@ -52,7 +52,7 @@ export class registerComponent implements OnInit {
     body.set('mail', this.mail.value);
     body.set('mdp', this.password.value);
 
-     this.http.post<any>("/api/user/register", body.toString(),
+     this.http.post<any>("https://projet-web-cnam-bdd.herokuapp.com/user/register", body.toString(),
      { headers: { 'content-type': 'application/x-www-form-urlencoded' }, observe: 'response' }, )
      .subscribe(response => {
        this.apiSuccess(response, response.headers.get('Authorization')); 

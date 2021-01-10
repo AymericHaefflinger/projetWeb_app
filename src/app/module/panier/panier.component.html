@@ -1,0 +1,21 @@
+
+<h4 *ngIf="(articlePanier$ | async).length >= 1">Votre Panier</h4>
+<h4 *ngIf="(articlePanier$ | async).length == 0">Votre panier est vide</h4>
+<ul
+  class="collection with-header"
+  *ngFor="let item of (articlePanier$ | async)"
+>
+  <li class="collection-item avatar">
+    <img src="{{ item.img }}" alt="" class="circle" />
+    <span class="title">{{ item.nom }}</span>
+    <p>
+      {{ item.prix }}
+    </p>
+    <a
+      class="btn btn-primary secondary-content"
+      (click)="removeArticle(item)"
+      ><i class="material-icons">Enlever du panier</i></a
+    >
+  </li>
+</ul>
+<h5 *ngIf="(articlePanier$ | async).length >= 1">Prix total : {{prixPanier$ | async}}€</h5>

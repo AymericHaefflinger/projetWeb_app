@@ -1,0 +1,66 @@
+
+<div *ngIf="(user$ | async) != null ; else elseBlock">
+
+  <div class="recapContainer">
+      <h4>Vos informations</h4>
+      <ul class="collection with-header containerPadding">
+        <li>
+          Nom : {{ (user$|async).nom }}
+        </li>
+        <li>
+          Prénom : {{ (user$|async).prenom }} 
+        </li>
+        <li>
+          Mail : {{ (user$|async).mail }}
+        </li>
+      </ul>
+  </div>
+
+  <div class="recapContainer">
+    <h4>Modifier vos informations</h4>
+    <form [formGroup]="compteForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group" >
+          <label>
+              Nom
+              <input  type="text"  class="form-control" formControlName="name" placeholder="Entrez votre nouveau nom" >
+          </label>
+          <div *ngIf="name.invalid && name.errors.number">
+            <p class="has-error">Votre nom ne peut pas contenir de numéro.</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label>
+              Prénom
+              <input type="text"  class="form-control" formControlName="surname"  placeholder="Entrez votre nouveau prénom" >
+          </label>
+           <div *ngIf="surname.invalid && surname.errors.number">
+            <p class="has-error">Votre prénom ne peut pas contenir de numéro.</p>
+          </div>
+      </div>
+      <div class="form-group">
+          <label>
+              Adresse E-mail
+              <input type="email"  class="form-control" formControlName="mail"  placeholder="Entrez votre nouvelle adresse e-mail" >
+          </label>
+          <div *ngIf="mail.invalid && mail.errors.notAnEmailAddress">
+          <p class="has-error">L'adresse mail entrée est invalide.</p>
+          </div>
+      </div>
+  
+      <div class="form-group">
+          <label>
+              Mot de passe
+              <input type="password"  id="pass" formControlName="password"  class="form-control" placeholder="Entrez votre nouveau mot de passe" >
+          </label>
+      </div>
+      <button type="submit"  class="btn btn-primary" [disabled]="!compteForm.valid">Changer les informations</button>
+  </form>
+  </div>
+
+</div>
+
+<ng-template #elseBlock>
+  <h4>Vous n'êtes pas connecté</h4>
+  <h6>Pour accéder à votre espace vous pouvez créer un compte ou vous connecter à un compte déja créé</h6>
+</ng-template>

@@ -1,0 +1,23 @@
+body {
+    font-family: Lato;
+  }
+  h4 {
+    text-align: center;
+  }
+  ul {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+  }
+  .li_margin{
+    margin-bottom: 5px;
+  }
+  .center_align{
+    text-align: center;
+  }
+  .left_align{
+    margin-left: -6% !important;
+  }
+  button{
+    margin: 5px;
+  }

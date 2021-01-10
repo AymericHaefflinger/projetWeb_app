@@ -58,7 +58,7 @@ export class ProduitComponent {
       let body = new URLSearchParams();
       body.set('term', searchTerm);
 
-      this.httpClient.post<any>("/api/article/search", body.toString(),
+      this.httpClient.post<any>("https://projet-web-cnam-bdd.herokuapp.com/article/search", body.toString(),
       { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
       .subscribe(data => {
         this.Articles = data[0]; 

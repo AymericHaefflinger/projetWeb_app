@@ -28,7 +28,7 @@ export class DetailComponent {
   ) {}
 
   getData(): void {
-    this.httpClient.get<any>("/api/article/get",
+    this.httpClient.get<any>("https://projet-web-cnam-bdd.herokuapp.com/article/get",
     { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
     .subscribe(Articles => 
       Articles[0].forEach((myObject, index) => {

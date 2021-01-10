@@ -1,0 +1,13 @@
+
+{
+    "/api": {
+      "target": "https://projet-web-cnam-bdd.herokuapp.com",
+      "secure": false,
+      "pathRewrite": {
+        "^/api": ""
+      },
+      "changeOrigin": true
+    }
+
+}
+  

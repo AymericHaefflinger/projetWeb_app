@@ -1,0 +1,24 @@
+<h4>Détail du jeu</h4>
+<ul class="collection with-header">
+  <li class="collection-item avatar">
+    <img src="{{ art.img }}" alt="" class="circle" />
+    <span class="title left_align">{{ art.nom }}</span>
+    <p class="left_align">
+      {{ art.prix }}
+    </p>
+  </li>
+  <div class="center_align">
+    <li class="li_margin">But du jeu : Gagner</li>
+    <li class="li_margin">Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc varius quis tellus sit amet dictum. 
+      Morbi vestibulum congue viverra. Curabitur luctus orci in scelerisque blandit. Sed ultrices fermentum porttitor. 
+      Proin vehicula congue augue in hendrerit. Praesent vulputate orci dapibus orci lobortis, non ultrices massa aliquet.
+      Sed at scelerisque turpis. Duis quis mi nisl. In hac habitasse platea dictumst.
+      Cras ut est accumsan, ultrices velit id, tincidunt tellus. Nunc commodo nisl eu quam sodales posuere.
+      Fusce sit amet lorem eu mauris pulvinar volutpat. </li>
+    <li>
+      <button class="btn btn-primary" (click)="addArticle(art)">
+        Ajouter au panier
+      </button>
+    </li>
+  </div>
+</ul>

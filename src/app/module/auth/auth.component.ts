@@ -49,7 +49,7 @@ export class AuthComponent implements OnInit {
     body.set('mail', this.mail.value);
     body.set('mdp', this.password.value);
 
-    this.httpClient.post<any>("/api/user/login", body.toString(),
+    this.httpClient.post<any>("https://projet-web-cnam-bdd.herokuapp.com/user/login", body.toString(),
       { headers: { 'content-type': 'application/x-www-form-urlencoded' }, observe: 'response' }, )
     .subscribe(response => {
       this.apiSuccess(response, response.headers.get('Authorization')); 

@@ -82,7 +82,7 @@ export class CompteComponent {
     body.set('mail', this.mail.value);
     body.set('mdp', this.password.value);
   
-     this.http.post<any>("/api/user/modify", body.toString(),
+     this.http.post<any>("https://projet-web-cnam-bdd.herokuapp.com/user/modify", body.toString(),
      { headers: { 'content-type': 'application/x-www-form-urlencoded' } })
      .subscribe(data => {
       this.userIsModified(data.user);
